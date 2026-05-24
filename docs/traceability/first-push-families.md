@@ -1,14 +1,13 @@
 # First push families
 
-This repository is scaffold-only for the Haxe HorizonLanguage target. It contains baseline coordination files only. No deterministic runtime validation is claimed.
+This local tranche ports the deterministic family-focus contract into a Haxe runtime compiled to Neko bytecode.
 
-## Horizon target
+| Family group | Haxe path | Source reference | Parity class |
+| --- | --- | --- | --- |
+| classic-six | `src/Stakeholder.hx` | current deterministic CLI family registry and smoke-contract shape | dedicated |
+| modern-core | `src/Stakeholder.hx` | current deterministic CLI family registry and smoke-contract shape | dedicated |
+| later families | `src/Stakeholder.hx` | grouped fallback policy in current deterministic repos | grouped fallback |
+| CLI contract | `src/Stakeholder.hx`, `tests/test_cli.sh` | small-tranche smoke contract | deterministic |
+| experimental provider | `src/Stakeholder.hx`, `tests/test_cli.sh` | fail-fast provider policy in current deterministic repos | explicit fail-fast |
 
-- Language id: haxe
-- Display name: Haxe
-- Horizon status: future-wave
-- Target class: parity-target
-- Repository: haxe-stakeholder
-## Scaffold scope
-
-Traceability status: scaffold-only. First-push family ownership, source audit rows, fixture requirements, and deterministic validation evidence must be supplied before implementation claims.
+Rust and Java remain canonical behavioral anchors; this Haxe tranche is local-only and native-validated.

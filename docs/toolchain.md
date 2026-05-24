@@ -1,14 +1,13 @@
 # Toolchain
 
-This repository is scaffold-only for the Haxe HorizonLanguage target. It contains baseline coordination files only. No deterministic runtime validation is claimed.
+Haxe native validation uses the Homebrew `haxe` compiler and the bundled Neko target on arm64 macOS.
 
-## Horizon target
+## Proven commands
 
-- Language id: haxe
-- Display name: Haxe
-- Horizon status: future-wave
-- Target class: parity-target
-- Repository: haxe-stakeholder
-## Scaffold scope
+- `haxe --version`
+- `neko -version`
+- `haxe -cp src -main Stakeholder -neko bin/stakeholder.n`
+- `make compiler-proof`
+- `make test`
 
-Toolchain status: scaffold-only. No compiler, interpreter, formatter, package manager, test runner, or deterministic runtime validation has been selected or proven.
+Toolchain source: Homebrew bottled `haxe` 4.3.7_2 plus `neko` 2.4.1_1. Docker, Nix, and Haxelib packages are not required for the current deterministic first tranche.
