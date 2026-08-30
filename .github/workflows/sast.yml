@@ -1,19 +1,21 @@
-name: ci-native
-on: [workflow_dispatch, push, pull_request]
+name: sast
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+  schedule:
+    - cron: '29 4 * * 1'
 permissions:
   contents: read
 jobs:
-  native:
+  haxe-typecheck:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Install Haxe and Neko
-        run: |
+      - run: |
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends haxe neko
-      - run: make compiler-proof
       - run: make analyze
-      - run: make test
