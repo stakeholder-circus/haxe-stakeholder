@@ -1,23 +1,12 @@
-> [!WARNING]
-> This repository is AI-assisted and manually reviewed. It is local-only in the resource-safe small deterministic tranche.
+> [!NOTE]
+> This repository is AI-assisted and manually reviewed. Copyright may subsist only in human-authored portions to the extent applicable.
 
 # haxe-stakeholder
 
-Haxe implementation of the stakeholder deterministic first tranche using the Neko target.
+Haxe implementation of the deterministic stakeholder tranche compiled to Neko bytecode.
 
-## Current tranche
+Implemented: full classic-six + modern-core, grouped later-family fallbacks, deterministic normalized JSON, list-values, family focus, seeded output, and provider fail-fast.
 
-- Full dedicated `classic-six + modern-core` generator families.
-- Grouped fallback for later generator families.
-- Deterministic normalized JSON with same-seed stability.
-- `--list-values`, `--focus-family`, `--output-format`, `--seed`, and explicit `--experimental-provider` fail-fast.
-- Full live-provider/runtime support remains deferred to the later provider wave.
+Validation: python3 scripts/validate_scaffold.py, make analyze, make test, and docker build -t haxe-stakeholder .
 
-## Commands
-
-- `python3 scripts/validate_scaffold.py`
-- `make compiler-proof`
-- `make test`
-- `make build && neko bin/stakeholder.n --list-values`
-
-Docker is intentionally not used in this M1-safe pass; native Haxe plus Neko is the validation lane.
+GitHub CI is authoritative for native, Docker, type-check SAST, dependency, actionlint, contract, and workflow-security gates.
