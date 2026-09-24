@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS build
+FROM ubuntu:25.10 AS build
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends haxe neko \
     && find /var/lib/apt/lists -mindepth 1 -delete
@@ -8,7 +8,7 @@ COPY tests/test_cli.sh tests/test_cli.sh
 RUN mkdir -p /out \
     && haxe -cp src -main Stakeholder -neko /out/stakeholder.n \
     && BIN=/out/stakeholder.n NEKO=neko tests/test_cli.sh
-FROM ubuntu:24.04
+FROM ubuntu:25.10
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends neko \
     && find /var/lib/apt/lists -mindepth 1 -delete \
